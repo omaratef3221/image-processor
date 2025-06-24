@@ -42,7 +42,7 @@ docker build -t image-processing .
 Replace the path to `images.csv` as needed:
 ```sh
 docker run -p 8000:8000 \
-  -v /Users/omaratef/Dropbox/TEMP/AIQ_Assignment/Assignment2/image-processing/data/images.csv:/app/data/images.csv \
+  -v ./data/images.csv:/app/data/images.csv \
   image-processing
 ```
 - The API will be available at [http://localhost:8000](http://localhost:8000)
