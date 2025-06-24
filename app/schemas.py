@@ -5,6 +5,3 @@ class ImageFrame(BaseModel):
     id: int
     depth: float
     image_base64: Optional[str] = None
-
-    class Config:
-        orm_mode = True

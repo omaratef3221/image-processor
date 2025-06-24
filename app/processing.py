@@ -3,8 +3,7 @@ import cv2
 from PIL import Image
 import io
 
-def resize_image(pixels, new_width=150):
-    """Resize 2D image array from 200 to new_width pixels in width"""
+def resize_image(pixels: np.ndarray, new_width:int = 150) -> np.ndarray:
     if pixels.dtype != np.uint8:
         pixels = pixels.astype(np.uint8)
 
@@ -15,9 +14,7 @@ def resize_image(pixels, new_width=150):
     resized = cv2.resize(pixels, (new_width, height), interpolation=cv2.INTER_LINEAR)
     return resized
 
-def apply_custom_colormap(image_array):
-    """Apply a custom blue-to-red colormap manually"""
-
+def apply_custom_colormap(image_array: np.ndarray) -> np.ndarray:
     image_array = image_array.astype(np.uint8)
 
     # Custom colormap: Blue (0,0,255) to Red (255,0,0)
@@ -34,14 +31,12 @@ def apply_custom_colormap(image_array):
     colored = cv2.merge([blue, green, red])
     return colored
 
-def image_to_bytes(image_array):
-    """Convert image array to PNG bytes"""
+def image_to_bytes(image_array: np.ndarray) -> bytes:
     is_success, buffer = cv2.imencode(".png", image_array)
     if not is_success:
         raise ValueError("Could not encode image to PNG")
     return buffer.tobytes()
 
-def bytes_to_image(image_bytes):
-    """Convert PNG bytes back to image array"""
+def bytes_to_image(image_bytes: bytes) -> np.ndarray:
     image = Image.open(io.BytesIO(image_bytes))
     return np.array(image)

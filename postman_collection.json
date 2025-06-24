@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "c8ea4db7-59eb-4df8-85ed-618b19384962",
+		"name": "AIQ_Assignment2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44847863",
+		"_collection_link": "https://omarelgendy-7148784.postman.co/workspace/Omar-Elgendy's-Workspace~c9fe45c2-a125-483a-8355-1da39183822b/collection/44847863-c8ea4db7-59eb-4df8-85ed-618b19384962?action=share&source=collection_link&creator=44847863"
+	},
+	"item": [
+		{
+			"name": "frames",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/frames/?depth_min=9000.1&depth_max=9500",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"frames",
+						""
+					],
+					"query": [
+						{
+							"key": "depth_min",
+							"value": "9000.1"
+						},
+						{
+							"key": "depth_max",
+							"value": "9500"
+						},
+						{
+							"key": "preview_image",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

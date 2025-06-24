@@ -50,11 +50,7 @@ def startup_event():
     db.commit()
 
 @app.get("/frames/")
-def get_sub_image(
-    depth_min: float,
-    depth_max: float,
-    db: Session = Depends(get_db)
-):
+def get_sub_image(depth_min: float, depth_max: float,db: Session = Depends(get_db)):
     frames = db.query(database.ImageFrame).filter(
         database.ImageFrame.depth >= depth_min,
         database.ImageFrame.depth <= depth_max
