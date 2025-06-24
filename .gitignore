@@ -2,3 +2,4 @@
 tests.ipynb
 image_data.db
 data/images.csv
+app/__pycache__
